@@ -1,0 +1,92 @@
+<mat-toolbar
+  color="warn"
+  class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center h-20 bg-red-600"
+>
+  <span class="text-2xl font-bold flex items-center justify-center text-white">
+    Servicio Fekmar
+  </span>
+
+  <button (click)="toggleMenu()" class="md:hidden focus:outline-none">
+    <i class="fas fa-bars text-2xl text-white"></i>
+  </button>
+
+  <div class="hidden md:flex flex-col relative">
+    <div class="flex space-x-8">
+      <a
+        routerLink="/inicio"
+        class="nav-link text-white text-sm hover:text-gray-300 p-2 transition-all duration-300"
+        [class.active]="currentRoute === '/inicio'"
+      >
+        Inicio
+      </a>
+      <a
+        routerLink="/servicio"
+        class="nav-link text-white text-sm hover:text-gray-300 p-2 transition-all duration-300"
+        [class.active]="currentRoute === '/servicio'"
+      >
+        Servicios
+      </a>
+      <a
+        routerLink="/contacto"
+        class="nav-link text-white text-sm hover:text-gray-300 p-2 transition-all duration-300"
+        [class.active]="currentRoute === '/contacto'"
+      >
+        Contacto
+      </a>
+    </div>
+
+    <!-- Indicador animado -->
+    <div
+      class="absolute bottom-0 h-1 bg-white transition-all duration-300"
+      [ngStyle]="{
+        left: indicatorPosition + 'px',
+        width: indicatorWidth + 'px'
+      }"
+    ></div>
+  </div>
+
+  <div class="md:hidden flex items-center space-x-2">
+    <a
+      href="tel:+56932426042"
+      class="text-white hover:text-gray-300 flex items-center"
+    >
+      <mat-icon>phone</mat-icon>
+      <span class="ml-1">Contactanos</span>
+    </a>
+  </div>
+
+  <div
+    *ngIf="menuOpen"
+    class="md:hidden bg-red-700 absolute top-20 left-0 right-0 z-50 shadow-lg transition-all duration-300 ease-in-out"
+  >
+    <ul class="text-center space-y-4 py-4">
+      <li>
+        <a
+          routerLink="/inicio"
+          class="block text-white hover:text-gray-300"
+          (click)="toggleMenu()"
+        >
+          Inicio
+        </a>
+      </li>
+      <li>
+        <a
+          routerLink="/servicio"
+          class="block text-white hover:text-gray-300"
+          (click)="toggleMenu()"
+        >
+          Servicios
+        </a>
+      </li>
+      <li>
+        <a
+          routerLink="/contacto"
+          class="block text-white hover:text-gray-300"
+          (click)="toggleMenu()"
+        >
+          Contacto
+        </a>
+      </li>
+    </ul>
+  </div>
+</mat-toolbar>
