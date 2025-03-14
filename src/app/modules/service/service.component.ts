@@ -25,7 +25,7 @@ export class ServiceComponent {
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.02 }
     );
 
     sections.forEach((section) => {
