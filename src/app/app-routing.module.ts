@@ -20,6 +20,7 @@ const routes: Routes = [
         (m) => m.ContactoModule
       ),
   },
+  { path: '**', redirectTo: 'inicio', pathMatch: 'full' },
 ];
 
 @NgModule({
