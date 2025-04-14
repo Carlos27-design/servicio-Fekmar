@@ -1,13 +1,7 @@
 import { Component, ElementRef, inject } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { EmailService } from '../../shared/services/email.service';
-import {
-  animate,
-  state,
-  style,
-  transition,
-  trigger,
-} from '@angular/animations';
+
 
 @Component({
   selector: 'app-contacto',
